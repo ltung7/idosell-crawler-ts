@@ -3,7 +3,7 @@ import { wrapper } from "axios-cookiejar-support";
 import { CookieJar } from "tough-cookie";
 import queryString from "qs";
 import FormData from 'form-data';
-import PATHS from './paths';
+import { PATHS } from './paths';
 import { IdosellPanelCredentials, UrlParams } from './types';
 
 export default class IdosellCrawler {

@@ -1,0 +1,1 @@
+import IdosellCrawler, { PATHS } from "./dist/index.js";

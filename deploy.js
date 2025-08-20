@@ -94,19 +94,18 @@ function compileTypeScript(fileNames) {
     });
 }
 
-function remakeEnums() {
-    let enumContents = fs.readFileSync(source + 'paths.d.ts', 'utf-8')
-    const declarations = enumContents.matchAll(/export enum ([A-Z_]+)/g);
-    const xports = [];
-    for (const [, declaration ] of declarations) {
-        xports.push(declaration);
-    }
-    enumContents = enumContents.replaceAll('export enum ', 'enum ');
-    enumContents += '\r\nexport default PATHS;';
-    fs.writeFileSync(source + 'paths.ts', enumContents);
-}
-
-remakeEnums();
+// function remakeEnums() {
+//     let enumContents = fs.readFileSync(source + 'paths.d.ts', 'utf-8')
+//     const declarations = enumContents.matchAll(/export enum ([A-Z_]+)/g);
+//     const xports = [];
+//     for (const [, declaration ] of declarations) {
+//         xports.push(declaration);
+//     }
+//     enumContents = enumContents.replaceAll('export enum ', 'enum ');
+//     enumContents += '\r\nexport default {\r\n    ' + xports.join(',\r\n    ') + '\r\n}';
+//     fs.writeFileSync(source + 'paths.ts', enumContents);
+// }
+// remakeEnums();
 
 compileTypeScript(tsFiles.map(filename => source + filename))
 

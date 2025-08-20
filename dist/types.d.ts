@@ -1,3 +1,5 @@
+import PATHS from "./paths";
+
 export interface IdosellPanelCredentials {
     url: string;
     login: string;
@@ -6,4 +8,4 @@ export interface IdosellPanelCredentials {
 
 export type UrlParams = string|Record<string,any>;
 
-export {}
+export { PATHS }
